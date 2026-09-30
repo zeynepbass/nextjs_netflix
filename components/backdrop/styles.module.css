@@ -1,0 +1,20 @@
+.backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--color-surface);
+}
+
+.backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(0deg, var(--color-bg) 0%, rgb(0 0 0 / 0.6) 40%, transparent 75%),
+    linear-gradient(90deg, rgb(0 0 0 / 0.8) 0%, rgb(0 0 0 / 0.3) 55%, transparent 100%);
+}
+
+.image {
+  object-fit: cover;
+  object-position: center top;
+}

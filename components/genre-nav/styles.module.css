@@ -1,0 +1,35 @@
+.list {
+  display: flex;
+  gap: 0.5rem;
+  margin-inline: calc(var(--gutter) * -1);
+  padding: 0.25rem var(--gutter);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-padding-inline: var(--gutter);
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+}
+
+.list::-webkit-scrollbar {
+  display: none;
+}
+
+.list > * {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+.chipSkeleton {
+  width: 6rem;
+  height: 2.5rem;
+  border-radius: 999px;
+}
+
+@media (min-width: 64rem) {
+  .list {
+    flex-wrap: wrap;
+    margin-inline: 0;
+    padding-inline: 0;
+    overflow: visible;
+  }
+}

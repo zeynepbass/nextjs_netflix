@@ -1,9 +1,19 @@
 .footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-top: 1px solid var(--color-surface-raised);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
 }
 
-.footer a {
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+  padding-block: 1.5rem;
+}
+
+.inner a {
+  color: var(--color-text);
   text-decoration: underline;
+  text-underline-offset: 3px;
 }

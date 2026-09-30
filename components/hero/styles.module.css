@@ -1,0 +1,55 @@
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  min-height: clamp(28rem, 78vh, 46rem);
+  padding-block: calc(var(--header-height) + 2rem) clamp(1rem, 3vw, 2rem);
+}
+
+.content {
+  display: grid;
+  justify-items: start;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+}
+
+.title {
+  max-width: 18ch;
+  font-size: clamp(2rem, 1.2rem + 4vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.overview {
+  display: -webkit-box;
+  max-width: 60ch;
+  overflow: hidden;
+  font-size: clamp(0.9375rem, 0.85rem + 0.4vw, 1.25rem);
+  color: rgb(255 255 255 / 0.85);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
+.cta {
+  margin-top: 0.5rem;
+}
+
+.titleSkeleton {
+  width: min(32rem, 90%);
+  height: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.lineSkeleton {
+  width: min(40rem, 100%);
+  height: 1.25rem;
+}
+
+.ctaSkeleton {
+  width: 10rem;
+  height: 3rem;
+  border-radius: 999px;
+}

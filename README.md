@@ -1,46 +1,46 @@
 # Netfilms
 
-A Netflix-inspired movie discovery app built with the Next.js App Router, React Server Components and The Movie Database (TMDB) API. It is fully responsive from 320px phones to wide desktop screens.
+Next.js App Router, React Server Components ve The Movie Database (TMDB) API kullanılarak geliştirilmiş, Netflix'ten ilham alan bir film keşif uygulaması. 320 piksel genişliğindeki telefonlardan geniş masaüstü ekranlarına kadar tamamen duyarlı (responsive) bir tasarıma sahiptir.
 
-![Home page](docs/screenshots/home-desktop.jpg)
+![Ana sayfa](docs/screenshots/home-desktop.jpg)
 
-## Features
+## Özellikler
 
-- **Featured hero:** a full-bleed backdrop that highlights the most popular movie
-- **Popular and Top Rated** sections in a responsive poster grid
-- **Genre browsing:** every TMDB genre is a chip. On mobile the chips scroll sideways, and on desktop they wrap onto more lines
-- **Movie details:** poster, rating, release year, runtime, tagline, genres and overview
-- **Loading skeletons** for every route, plus custom error and 404 pages
-- **Per-page SEO metadata,** including Open Graph images on movie pages
-- **Accessibility:** semantic HTML, keyboard focus styles and support for `prefers-reduced-motion`
-- **Offline data:** without an API key the app runs on bundled fixture data, so it works out of the box
+- **Öne çıkan film alanı:** En popüler filmi öne çıkaran, ekran genişliğini tamamen kaplayan bir arka plan görseli.
+- **Popüler ve en yüksek puanlı filmler:** Duyarlı poster ızgarasıyla sunulan film bölümleri.
+- **Türlere göre keşif:** TMDB'deki tüm film türleri etiketler şeklinde gösterilir. Mobil cihazlarda etiketler yatay kaydırılabilir; masaüstünde ise birden fazla satıra yerleşir.
+- **Film detayları:** Poster, puan, çıkış yılı, süre, slogan, türler ve film özeti.
+- **Yükleme iskeletleri (Skeleton):** Tüm rotalarda yükleme göstergeleri, ayrıca özel hata ve 404 sayfaları.
+- **Sayfa bazlı SEO meta verileri:** Film sayfalarında Open Graph görselleri de dahil olmak üzere her sayfaya özel SEO meta verileri.
+- **Erişilebilirlik:** Anlamsal HTML, klavye odağı stilleri ve `prefers-reduced-motion` desteği.
+- **Çevrimdışı veri desteği:** API anahtarı olmadan uygulama, paketle birlikte gelen örnek verilerle çalışır. Böylece ek yapılandırma gerektirmeden kullanılabilir.
 
-## Screenshots
+## Ekran Görüntüleri
 
-| Genre | Movie details |
+| Tür sayfası | Film detayları |
 | --- | --- |
-| ![Genre page](docs/screenshots/genre-desktop.jpg) | ![Movie details page](docs/screenshots/movie-desktop.jpg) |
+| ![Tür sayfası](docs/screenshots/genre-desktop.jpg) | ![Film detayları sayfası](docs/screenshots/movie-desktop.jpg) |
 
-| Home (mobile) | Movie details (mobile) |
+| Ana sayfa (mobil) | Film detayları (mobil) |
 | --- | --- |
-| <img src="docs/screenshots/home-mobile.jpg" alt="Home page on mobile" width="300" /> | <img src="docs/screenshots/movie-mobile.jpg" alt="Movie details page on mobile" width="300" /> |
+| <img src="docs/screenshots/home-mobile.jpg" alt="Mobil cihazda ana sayfa" width="300" /> | <img src="docs/screenshots/movie-mobile.jpg" alt="Mobil cihazda film detayları sayfası" width="300" /> |
 
-## Tech Stack
+## Teknoloji Yığını
 
 - [Next.js 16](https://nextjs.org) (App Router, Server Components, Turbopack)
 - [React 19](https://react.dev)
 - [TypeScript](https://www.typescriptlang.org)
-- CSS Modules with design tokens in CSS custom properties
-- [next/image](https://nextjs.org/docs/app/api-reference/components/image) and [next/font](https://nextjs.org/docs/app/api-reference/components/font)
+- CSS özel özellikleri (custom properties) üzerinden tanımlanan tasarım değişkenleriyle CSS Modules
+- [next/image](https://nextjs.org/docs/app/api-reference/components/image) ve [next/font](https://nextjs.org/docs/app/api-reference/components/font)
 - [React Icons](https://react-icons.github.io/react-icons)
 
-## Getting Started
+## Başlangıç
 
-### Requirements
+### Gereksinimler
 
-- Node.js 20.9 or newer
+- Node.js 20.9 veya üzeri
 
-### Installation
+### Kurulum
 
 ```bash
 git clone https://github.com/<your-username>/nextjs_netflix.git
@@ -48,63 +48,65 @@ cd nextjs_netflix
 npm install
 ```
 
-### Environment Variables
+### Ortam Değişkenleri
 
-Copy the example file and add your [TMDB API key](https://www.themoviedb.org/settings/api):
+Örnek dosyayı kopyala ve [TMDB API anahtarını](https://www.themoviedb.org/settings/api) ekle:
 
 ```bash
 cp .env.example .env.local
 ```
 
+`.env.local` dosyasına aşağıdaki değişkeni ekle:
+
 ```env
 TMDB_API_KEY=your_tmdb_api_key
 ```
 
-If you leave `TMDB_API_KEY` empty, the app uses the bundled fixture data in `lib/tmdb/fixtures`.
+`TMDB_API_KEY` boş bırakılırsa uygulama, `lib/tmdb/fixtures` klasöründe bulunan örnek verileri kullanır.
 
-### Scripts
+### Komutlar
 
-| Command | Description |
+| Komut | Açıklama |
 | --- | --- |
-| `npm run dev` | Start the development server at http://localhost:3000 |
-| `npm run build` | Create a production build |
-| `npm start` | Serve the production build |
-| `npm run lint` | Run ESLint |
-| `npm run typecheck` | Run the TypeScript compiler without emitting |
+| `npm run dev` | Geliştirme sunucusunu `http://localhost:3000` adresinde başlatır. |
+| `npm run build` | Üretim derlemesini oluşturur. |
+| `npm start` | Üretim derlemesini çalıştırır. |
+| `npm run lint` | ESLint kontrollerini çalıştırır. |
+| `npm run typecheck` | TypeScript derleyicisini çıktı üretmeden çalıştırarak tür kontrollerini yapar. |
 
-## Project Structure
+## Proje Yapısı
 
-```
+```text
 app/
-  layout.tsx            Root layout, fonts and metadata
-  page.tsx              Home page
-  genre/[id]/page.tsx   Movies filtered by genre
-  movie/[id]/page.tsx   Movie details
-  loading.tsx           Route-level skeletons
-  error.tsx             Error boundary
-  not-found.tsx         404 page
-components/             Reusable UI components (one folder each, with CSS Modules)
+  layout.tsx            Kök yerleşim, yazı tipleri ve meta veriler
+  page.tsx              Ana sayfa
+  genre/[id]/page.tsx   Türe göre filtrelenmiş filmler
+  movie/[id]/page.tsx   Film detayları
+  loading.tsx           Rota düzeyinde yükleme iskeletleri
+  error.tsx             Hata sınırı
+  not-found.tsx         404 sayfası
+
+components/             Yeniden kullanılabilir UI bileşenleri
+                        (her bileşen için ayrı klasör ve CSS Modules)
+
 lib/
-  format.ts             Formatting helpers
+  format.ts             Biçimlendirme yardımcıları
   tmdb/
-    index.ts            Chooses the data source based on the environment
-    api-source.ts       TMDB REST client with ISR caching
-    fixture-source.ts   Offline data source built from the fixtures
-    image.ts            TMDB image URL builder
-    types.ts            Shared domain types
+    index.ts            Ortama göre veri kaynağını seçer
+    api-source.ts       ISR önbelleklemesi içeren TMDB REST istemcisi
+    fixture-source.ts   Örnek verilerle çalışan çevrimdışı veri kaynağı
+    image.ts            TMDB görsel URL'lerini oluşturur
+    types.ts            Paylaşılan alan (domain) türleri
 ```
 
-## Architecture Notes
+## Mimari Hakkında Notlar
 
-- **Data source abstraction:** pages depend on the `MovieSource` interface. The live TMDB client and the fixture source both implement it, so pages never need to know where the data comes from.
-- **Server-only data access:** the TMDB layer is marked `server-only`, so the API key never reaches the client bundle.
-- **Caching:** TMDB responses are revalidated every hour through `fetch` with `next.revalidate`.
-- **Responsive layout:** fluid spacing and typography use `clamp()`. The poster grid uses `auto-fill` columns, so no fixed breakpoints are needed.
+- **Veri kaynağı soyutlaması:** Sayfalar `MovieSource` arayüzüne bağımlıdır. Canlı TMDB istemcisi ve örnek veri kaynağı bu arayüzü uygular. Böylece sayfaların verinin nereden geldiğini bilmesine gerek kalmaz.
+- **Yalnızca sunucuda veri erişimi:** TMDB katmanı `server-only` olarak işaretlenmiştir. Bu sayede API anahtarı istemci paketine dahil edilmez.
+- **Önbellekleme:** TMDB yanıtları, `fetch` ve `next.revalidate` kullanılarak her saat yeniden doğrulanır.
+- **Duyarlı tasarım:** Akışkan boşluklar ve yazı boyutları için `clamp()` kullanılır. Film posterlerinin ızgarası `auto-fill` sütunlarıyla oluşturulur; böylece sabit ekran genişliği eşiklerine ihtiyaç duyulmaz.
 
-## Attribution
+## Atıf
 
-This product uses the TMDB API but is not endorsed or certified by TMDB.
+Bu ürün TMDB API'sini kullanmaktadır ancak TMDB tarafından onaylanmamış veya sertifikalandırılmamıştır.
 
-## License
-
-[MIT](LICENSE)
